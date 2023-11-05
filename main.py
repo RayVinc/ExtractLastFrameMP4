@@ -1,33 +1,31 @@
-import cv2
+import tkinter as tk
+from tkinter import filedialog
+import moviepy.editor as mp
 
-VIDEO_PATH = "your_path"
+def extract_audio():
+    file_path = filedialog.askopenfilename(filetypes=[("MP4 files", "*.mp4")])
+    
+    if file_path:
+        video = mp.VideoFileClip(file_path)
+        audio = video.audio
+        audio.write_audiofile("extracted_audio.mp3")
+        audio.close()
+        video.close()
+        status_label.config(text="Audio extraction complete!")
 
-# Open the video file
-video_path = VIDEO_PATH
-cap = cv2.VideoCapture(video_path)
+# Create the main application window
+app = tk.Tk()
+app.title("MP4 Audio Extractor")
 
-# Check if the video file opened successfully
-if not cap.isOpened():
-    print("Error: Could not open video file.")
-    exit()
+# Create and configure widgets
+instruction_label = tk.Label(app, text="Select an MP4 file to extract audio:")
+instruction_label.pack(pady=10)
 
-frame = None
+extract_button = tk.Button(app, text="Extract Audio", command=extract_audio)
+extract_button.pack()
 
-# Read frames until the end of the video
-while True:
-    ret, frame = cap.read()
-    print(f"\n#####\n{ret = }, {frame = } \n####\n")
-    if not ret:
-        break
-    frame2 = frame
+status_label = tk.Label(app, text="")
+status_label.pack(pady=10)
 
-# Close the video file
-cap.release()
-
-# Check if a frame was read
-if frame2 is not None:
-    # Save the last frame as image
-    cv2.imwrite('last_frame.png', frame2)
-    print("Last frame saved as last_frame.png")
-else:
-    print("Error: Could not read any frames from the video.")
+# Start the tkinter main loop
+app.mainloop()
