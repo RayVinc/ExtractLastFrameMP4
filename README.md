@@ -1,4 +1,6 @@
-# PART 1: Audio Extraction: From MP4 To MP3
+# PART 1: MP4 Player
 
-# PART 2: MP4 Trimmer
+# PART 2: Audio Extraction: From MP4 To MP3
+
+# PART 3: MP4 Trimmer
 
