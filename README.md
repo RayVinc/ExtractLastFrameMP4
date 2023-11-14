@@ -6,5 +6,7 @@ mp4play.py
 
 MP4AudioExtract.py
 
-# PART 3: MP4 Trimmer
+# PART 3: Extracting First 10 Seconds
 
+
+# PART 4: Extracting Final 10 Seconds
