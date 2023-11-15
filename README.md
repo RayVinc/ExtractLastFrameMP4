@@ -2,11 +2,15 @@
 
 mp4play.py
 
-# PART 2: Audio Extraction: From MP4 To MP3
+# PART 2: Get MP4 Runtime
+
+
+
+# PART 3: Audio Extraction: From MP4 To MP3
 
 MP4AudioExtract.py
 
-# PART 3: Extracting First 10 Seconds
+# PART 4: Extracting First 10 Seconds
 
 
-# PART 4: Extracting Final 10 Seconds
+# PART 5: Extracting Final 10 Seconds
