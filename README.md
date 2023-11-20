@@ -17,5 +17,3 @@ mp4first10.py
 ## PART 5: Extracting Final 10 Seconds
 
 mp4final10.py
-
-# ALL IN ONE
